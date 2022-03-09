@@ -11,6 +11,7 @@
  
 .content {
     grid-area: content;
+    transition: 0.3s;
 }
 .sidebar{
     grid-area: sidebar;
@@ -58,6 +59,15 @@ nav li a {
     text-decoration: none;
     transition: 0.3s;
 }
+
+nav li h1 {
+    color: white;
+    font-weight: 700;
+    opacity: 0.6;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 2em;
+}
  
 nav li a:hover {
     opacity: 1;
@@ -79,7 +89,7 @@ nav li a:hover {
 }
  
 .hero p {
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.3em;
     color: #98aBad;
 }

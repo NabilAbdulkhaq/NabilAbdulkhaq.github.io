@@ -1,4 +1,4 @@
 <div align="center">
-<h2>Website Portofolio</h2>
-<p>This is my first website</p>
+<h2>Portofolio Site</h2>
+<p>This is my first portofolio website built with HTML & CSS In Dcoder</p>
 </div>

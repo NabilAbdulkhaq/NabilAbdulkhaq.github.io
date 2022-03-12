@@ -12,6 +12,7 @@
 .content {
     grid-area: content;
     transition: 0.3s;
+    padding-bottom: 2.5rem;
 }
 .sidebar{
     grid-area: sidebar;
@@ -22,6 +23,8 @@
 .footer {
     grid-area: footer;
     background: white;
+    justify-content: bottom;
+    height: 30;
 }
 .container {
     font-size: 1.5em;
@@ -32,7 +35,6 @@
     grid-template-areas: "sidebar" "content" "footer";
     grid-template-columns: 1fr;
     grid-template-rows: 130px 800px 250px;
- 
 }
  
 .content, .sidebar, .footer{
@@ -107,7 +109,7 @@ nav li a:hover {
 }
  
 footer ul {
-max-width: 640px;
+max-width: 900px;
 margin: 2em auto;
 padding: 0;
 text-align: center;
@@ -132,6 +134,9 @@ footer ul li img {
  
 footer p {
     font-size: 0.8em;
+    margin: auto;
+    padding: 16px;
+    padding-left: 8%;
 }
  
 @media (min-width: 1040px){

@@ -222,19 +222,19 @@ box-shadow: 0 0 25px var( --main-color);
     }
     21%,
     40%{
-        content: "Graphic Designer";
+        content: "Mobile Developer";
     }
     41%,
     60%{
-        content: "UI/UX Designer";
+        content: "Graphic Designer";
     }
     61%,
     80%{
-        content: "Visual Editing";
+        content: "Visual Designer";
     }
     81%,
     100%{
-        content: "Mobile Developer";
+        content: "UI/UX Designer";
     }
 }
 
@@ -571,7 +571,7 @@ box-shadow: 0 0 25px var( --main-color);
         margin-top: 3rem;
     }
     .home-content p{
-        max-width: 600px;
+        max-width: 900px;
         margin: 0 auto;
     }
     .home-img img{

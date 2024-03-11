@@ -17,7 +17,7 @@
         <i class='bx bx-menu' id="menu-icon"></i>
 
         <nav class="navbar">
-            <a href="#home" class="active">Home</a>
+            <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#contact">Contact</a>
@@ -97,17 +97,40 @@
 
             <section class="contact" id="contact">
                 <h2 class="heading">Contact <span>Me</span></h2>
-                <form action="#">
+
+                <div class="alert success" id="alertberhasil" style="display: none;">
+                    <input type="checkbox" id="alert2"/>
+                    <label class="close" title="close" for="alert2">
+                  <i class="icon-remove"></i>
+                </label>
+                    <p class="inner">
+                        <strong>Success!</strong> Your message was successfully send
+                    </p>
+                </div>
+
+                <div class="alert error" id="alertgagal" style="display: none;">
+                    <input type="checkbox" id="alert1"/>
+                <label class="close" title="close" for="alert1">
+                  <i class="icon-remove"></i>
+                </label>
+                    <p class="inner">
+                        <strong>Error!</strong> Your message was failed to send
+                    </p>
+                </div>
+
+                <form name='nabil-contact-form'>
                     <div class="input-box">
-                        <input type="text" placeholder="Your Name">
-                        <input type="email" placeholder="Email">
+                        <input type="text" placeholder="Your Name" name="yourname">
+                        <input type="email" placeholder="Email" name="email">
                     </div>
                     <div class="input-box">
-                        <input type="text" placeholder="Subject">
+                        <input type="text" placeholder="Subject" name="subject">
+                        <textarea type="text" name="message" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
                     </div>
                 
-                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send Message" class="btn">
+                    <input type="submit" value="Send Message" class="btn" id="btnform">
+                    <div class="loader" id="loaderform" style="display: none;"></div>
+
                 </form>
             </section>
 
@@ -147,5 +170,32 @@
             </footer>
     
     <script src="script.js"></script>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycby_wBlwhCSkcWyioL6NpKMfcPnopNzJmhBX3Y-EP_VOPDSph32t40wMgEoLU30-u8i1NA/exec'
+        const form = document.forms['nabil-contact-form']
+        const button = document.querySelector('.btn');
+        const alertSuccess = document.querySelector('.alert.success');
+        const alertError = document.querySelector('.alert.error');
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          document.getElementById("loaderform").style.display = "inline-block";
+          document.getElementById("btnform").style.display = "none";
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                document.getElementById("loaderform").style.display = "none";
+                document.getElementById("btnform").style.display = "inline-block";
+                document.getElementById("alertberhasil").style.display = "inline";
+                form.reset();
+                console.log('Success!', response)
+            })
+            .catch(error => { 
+                document.getElementById("alertgagal").style.display = "inline";
+                console.error('Error!', error.message)
+            })
+        })
+      </script>
+      
 </body>
 </html>
